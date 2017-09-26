@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+
+<title>Exercicios JSF</title>
+<style>
+.centraliza {
+	width: 800px;
+	margin: auto;
+	text-align: center;
+}
+
+.espacamento {
+	width: 1100px;
+	margin-left: 100px;
+	padding: 20px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+</style>
+
+</head>
+
+<h:body>
+	<h:form>
+		<div class="centraliza">
+			<H1>EXERCÍCIOS</H1>
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 1</H2>
+			<h:inputText id="valorDiv1" value="#{exercicioController.valor1}" />
+			<br /> <br />
+			<h:inputText id="valorDiv2" value="#{exercicioController.valor2}" />
+			<div>
+				<br />
+				<h:commandButton name="btnSomar" id="btnSomar" value="Somar"
+					action="#{exercicioController.exibirSoma}" />
+			</div>
+			<div>
+				<br />
+				<h:commandButton name="btnSubtrair" id="btnSubtrair"
+					value="Subtrair" action="#{exercicioController.exibirSubtrair}" />
+			</div>
+			<div>
+				<br />
+				<h:commandButton name="btnMultiplicar" id="btnMultiplicar"
+					value="Multiplicar"
+					action="#{exercicioController.exibirMultiplicacao}" />
+			</div>
+			<div>
+				<br />
+				<h:commandButton name="btnDividir" id="btnDividir" value="Dividir"
+					action="#{exercicioController.exibirDivisao}" />
+			</div>
+			<div>
+				<br />
+				<h:outputText id="resultadoMult"
+					value="Resultado: #{exercicioController.resultado}" />
+			</div>
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 2</H2>
+			Texto:
+			<h:inputText id="texto" value="#{exercicioController.texto}" />
+			<br /> <br />
+			<div>
+				<br />
+				<h:commandButton name="btnMaiusculo" id="btnMaiusculo"
+					value="Maiusculo" action="#{exercicioController.exibirMaiusculo}" />
+			</div>
+			<div>
+				<br />
+				<h:commandButton name="btnMinusculo" id="btnMinusculo"
+					value="Minusculo" action="#{exercicioController.exibirMinusculo}" />
+			</div>
+			<div>
+				<br />
+				<h:outputText id="resultadoTexto"
+					value="Resultado: #{exercicioController.textoFormatado}" />
+			</div>
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 3</H2>
+			<h:selectBooleanCheckbox name="checkbox1" id="checkbox1"
+				value="Masculino" />
+			Masculino <br />
+			<h:selectBooleanCheckbox name="checkbox2" id="checkbox2"
+				value="Feminino" />
+			Feminino <br />
+			<h:selectBooleanCheckbox name="checkbox3" id="checkbox3"
+				value="Indefinido" />
+			Indefinido
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 4</H2>
+			<h4>De qual estado do sul você se refere?</h4>
+			<h:selectOneMenu value="#{exercicioController.opcao}">
+				<f:selectItem itemValue="1" itemLabel="Rio Grande do Sul" />
+				<f:selectItem itemValue="2" itemLabel="Paraná" />
+				<f:selectItem itemValue="3" itemLabel="Santa Catarina" />
+			</h:selectOneMenu>
+			<br />
+			<br />
+			<h:commandButton value="Submit" action="result" />
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 5</H2>
+			<h4>Será que hoje chove?</h4>
+			<h:selectOneRadio value="#{exercicioController.opcao}">
+				<f:selectItem itemValue="1" itemLabel="Sim" />
+				<f:selectItem itemValue="2" itemLabel="Não" />
+				<f:selectItem itemValue="3" itemLabel="Talvez" />
+			</h:selectOneRadio>
+			<br />
+			<h:commandButton value="Submit" action="result" />
+		</div>
+
+		<div class="espacamento">
+			<H2>Exercício 6</H2>
+			Valor:
+			<h:inputText name="dinheiro" id="dinheiro"
+				value="#{exercicioController.dinheiro}" />
+			<h:commandButton name="formatar" id="formatar" value="Formatar"
+				action="#{exercicioController.formatarDinheiro}" />
+			<br /> <br />
+			<h:outputText name="formatado" id="formatado"
+				value="Valor Final: #{exercicioController.dinheiroFormatado}" />
+		</div>
+
+	</h:form>
+
+</h:body>
+
+</html>
